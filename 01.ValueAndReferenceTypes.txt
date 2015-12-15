@@ -1,0 +1,33 @@
+Question:	Which .NET data types are value types? Which types are reference types?
+Answer:		value types are: 
+			Primitive types (byte, sbyte, short, ushort, int, uint, long, ulong, double, float, bool, char), 
+			Structures, Enumerations and 
+
+Question:	How do value and reference types differ when assigned to a variable? 
+Answer:		Value types are copied to another location in the stack. 
+			Reference type's pointer address is copied into the stack and still points to the same data inside the heap.
+
+Question:	How do value and reference types behave when passed as argument to a method?
+Answer:		When passed as argument, value types cannot be changed directly from inside the function.
+			Reference types will be changed inside the function body because the pointer address is passed as argument.
+
+Question:	Where in memory are value types allocated? Where are reference types allocated?
+Answer:		Value types are allocated in the stack, 
+			reference types are allocated in the heap (reference pointer to the heap address is allocated in the stack)
+
+Question:	What is data mutation? Can value types be mutated? Can reference types be mutated?
+Answer:		Primitive value types are immutable and can only be copied to another address in the stack. 
+			Reference types can be muteted.
+
+Question:	What is the difference between mutating and setting (assigning) a variable? Give examples.
+Answer:		Mutating means changing a value of the object that mutates. Setting, means to create a new address in the heap.
+			Example: Mutating:
+			Student st = new Student();
+			st.Name = 5 // mutation
+			st = new Student(); // setting
+
+Question:	What are the out and ref keywords used for? In what do they differ?
+Answer:		ref and out are both passed by stack address for both value types and reference types
+			ref tells the compiler that the object is initialized before entering the function, 
+			while out tells the compiler that the object will be initialized inside the function.
+			So while ref is two-ways, out is out-only.
